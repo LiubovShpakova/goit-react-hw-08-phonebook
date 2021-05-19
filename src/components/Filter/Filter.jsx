@@ -18,7 +18,7 @@ const Filter = ({ value, onChange }) => (
         <Form.Label>Find Contacts By Name</Form.Label>
         <Form.Control
           type="text"
-          placeholder="Enter contact name or number"
+          placeholder="Enter contact name"
           value={value}
           onChange={onChange}
         />

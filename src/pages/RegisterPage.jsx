@@ -1,6 +1,9 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import operations from '../redux/auth/auth-operations';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { Form, Button } from 'react-bootstrap';
 import styled from 'styled-components';
 const Styles = styled.div`
@@ -22,7 +25,16 @@ class RegisterPage extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-
+    if (
+      this.state.name === '' ||
+      this.state.email === '' ||
+      this.state.password === ''
+    ) {
+      toast.error('It is necessary to fill in the form fields', {
+        className: 'error_toast',
+      });
+      return;
+    }
     this.props.onRegister(this.state);
 
     this.setState({ name: '', email: '', password: '' });
@@ -72,6 +84,7 @@ class RegisterPage extends Component {
             </Button>
           </Form>
         </Styles>
+        <ToastContainer autoClose={3000} />
       </div>
     );
   }

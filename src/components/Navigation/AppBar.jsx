@@ -36,8 +36,7 @@ const AppBar = ({ isAuthenticated }) => (
                   Home
                 </NavLink>
               </Nav.Link>
-              {/* {isAuthenticated && ( */}
-              <Nav.Link>
+                 <Nav.Link>
                 <NavLink
                   to="/contacts"
                   className="nav__link"
@@ -46,8 +45,7 @@ const AppBar = ({ isAuthenticated }) => (
                   Contacts
                 </NavLink>
               </Nav.Link>
-              {/* )} */}
-            </Nav>
+              </Nav>
             <Nav>{isAuthenticated ? <UserMenu /> : <AuthNav />}</Nav>
           </Navbar.Collapse>
         </Container>
@@ -61,4 +59,4 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps)(AppBar);
 
-// export default AppBar;
+
