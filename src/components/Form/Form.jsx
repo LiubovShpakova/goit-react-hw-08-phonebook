@@ -38,22 +38,24 @@ class ContactForm extends Component {
     const sameName = items.find(
       el => el.name.toLowerCase() === name.toLowerCase(),
     );
-    /* const sameNumber = items.find(el => el.number === number);
+    const sameNumber = items.find(el => el.number === number);
 
-     if (sameName || sameNumber) {
-      alert(`${name} or ${number} is already in contacts`);
-      return;
-    } else {
-      onSubmit(name, number);
-    }*/
-    if (sameName) {
-      toast.error(`${name} is already in contacts`, {
+    if (sameName || sameNumber) {
+      toast.error(`${name} or ${number} is already in contacts`, {
         className: 'error_toast',
       });
       return;
     } else {
       onSubmit(name, number);
     }
+    /*if (sameName) {
+      toast.error(`${name} is already in contacts`, {
+        className: 'error_toast',
+      });
+      return;
+    } else {
+      onSubmit(name, number);
+    }*/
   };
   handleSubmit = e => {
     e.preventDefault();
